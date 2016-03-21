@@ -1,5 +1,5 @@
 class TarefasController < ApplicationController
-  before_action :set_tarefa, only: [:show, :edit, :update, :destroy]
+  before_action :set_tarefa, only: [:show, :edit, :update, :destroy, :completa_tarefa]
 
   # GET /tarefas
   # GET /tarefas.json
@@ -61,6 +61,20 @@ class TarefasController < ApplicationController
     end
   end
 
+  def completa_tarefa
+    @tarefa.completo = !@tarefa.completo
+
+    respond_to do |format|
+      if @tarefa.save
+        format.html { redirect_to tarefas_url, notice: 'uhuul, tarefa atualizada!' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to tarefas_url, notice: 'Algum erro aconteceu ao tentar atualizar a tarefa :(' }
+        format.json { head :no_content }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tarefa
@@ -69,6 +83,6 @@ class TarefasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tarefa_params
-      params.require(:tarefa).permit(:nome, :status)
+      params.require(:tarefa).permit(:nome, :completo)
     end
 end

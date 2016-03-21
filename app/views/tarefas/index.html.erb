@@ -17,6 +17,7 @@
         <td><%= tarefa.nome %></td>
         <td><%= tarefa.completo %></td>
         <td><%= link_to 'Show', tarefa %></td>
+        <td><%= link_to 'Completar tarefa', completar_tarefa_path(tarefa) %></td>
         <td><%= link_to 'Edit', edit_tarefa_path(tarefa) %></td>
         <td><%= link_to 'Destroy', tarefa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

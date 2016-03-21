@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'tarefas#index'
   resources :tarefas
+  get 'completar-tarefa/:id' => 'tarefas#completa_tarefa', as: 'completar_tarefa'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
