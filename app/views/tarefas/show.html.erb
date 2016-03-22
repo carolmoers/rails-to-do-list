@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @tarefa.nome %>
-</p>
-
-<p>
-  <strong>completo:</strong>
-  <%= @tarefa.completo %>
-</p>
-
-<%= link_to 'Edit', edit_tarefa_path(@tarefa) %> |
-<%= link_to 'Back', tarefas_path %>
+<div id="tarefas">
+  <p>
+    <strong>Nome:</strong>
+    <%= @tarefa.nome %>
+  </p>
+  <p>
+    <strong>Finalizada:</strong>
+    <% if @tarefa.completo %>
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <% else %>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <% end %>
+  </p>
+  <%= link_to 'Editar', edit_tarefa_path(@tarefa) %> |
+  <%= link_to 'Voltar', root_path %>
+</div>

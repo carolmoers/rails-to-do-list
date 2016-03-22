@@ -11,6 +11,10 @@ body {
   margin: -122px 0 100px -180px;
 }
 
+#tarefas>a {
+  color: #fff;
+}
+
 #tarefas h1 {
   position: relative;
   background-color: #1abc9c;
