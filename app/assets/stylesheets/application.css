@@ -1,19 +1,66 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+ background: #16a085;
+ color: #fff;
+}
 
- body {
-   margin: 10px;
- }
+#tarefas {
+  position: absolute;
+  width: 360px;
+  top: 55%;
+  left: 50%;
+  margin: -122px 0 100px -180px;
+}
+
+#tarefas h1 {
+  position: relative;
+  background-color: #1abc9c;
+  color: #fff;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+#tarefas h1 a {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  background-color: #1BD2AE;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.tarefa {
+    background-color: #fff;
+    height: 40px;
+    color: #666;
+    line-height: 40px;
+}
+
+.tarefa span {
+  width: 55%;
+  display: inline-block;
+}
+
+.tarefa a {
+  display: inline-block;
+  color: #666;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.desfazer-tarefa {
+  background-color: #D9534F;
+}
+
+.finalizar-tarefa {
+  background-color: #2ecc71;
+}
